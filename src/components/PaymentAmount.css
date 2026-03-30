@@ -1,0 +1,215 @@
+.payment-amount-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 24px;
+}
+
+.payment-amount-content-card {
+  background: linear-gradient(to bottom, #93c5fd 0%, #c4b5fd 50px, #ffffff 200px, #ffffff 100%);
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.payment-amount-content {
+  width: 100%;
+  max-width: 100%;
+  padding: 32px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.intro-section {
+  background: transparent;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: none;
+  border: none;
+}
+
+.intro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.intro-header h2 {
+  margin: 0 0 16px 0;
+  color: #1f2937;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.intro-header p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 15px;
+}
+
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .payment-amount-content {
+    padding: 32px 24px;
+  }
+
+  .intro-header h2 {
+    font-size: 22px;
+  }
+
+  .intro-header p {
+    font-size: 14px;
+  }
+}
+
+/* スマートフォン対応 */
+@media (max-width: 768px) {
+  .payment-amount-page {
+    padding: 12px;
+  }
+
+  .payment-amount-content {
+    padding: 24px 16px;
+  }
+
+  .intro-section {
+    padding: 24px 16px;
+  }
+
+  .intro-header h2 {
+    font-size: 20px;
+  }
+
+  .intro-header p {
+    font-size: 14px;
+  }
+}
+
+/* テーブルスタイル */
+.monthly-balance-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.monthly-balance-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  background-color: #f3f4f6;
+  border-bottom: 2px solid #d1d5db;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.monthly-balance-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.monthly-balance-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.monthly-balance-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* チャートセクション */
+.chart-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.chart-section h3 {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* 期間選択 */
+.period-selector {
+  margin-bottom: 24px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.period-selector label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.period-selector select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.period-selector select:hover {
+  border-color: #9ca3af;
+}
+
+.period-selector select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* 情報メッセージ */
+.info-message {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.info-message strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.info-message p {
+  margin: 8px 0 0 0;
+  line-height: 1.6;
+}
+
+/* レスポンシブ対応（テーブル） */
+@media (max-width: 768px) {
+  .monthly-balance-table {
+    font-size: 12px;
+  }
+
+  .monthly-balance-table th,
+  .monthly-balance-table td {
+    padding: 8px 4px;
+  }
+
+  .chart-section {
+    padding: 16px;
+  }
+
+  .period-selector {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+

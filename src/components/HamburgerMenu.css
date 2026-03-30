@@ -1,0 +1,22 @@
+.hamburger-menu {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 1001;
+}
+
+.hamburger-menu:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.hamburger-menu svg {
+  display: block;
+}
+

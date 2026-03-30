@@ -1,0 +1,117 @@
+.necessary-expenses-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 24px;
+}
+
+.necessary-expenses-content-card {
+  background: linear-gradient(to bottom, #93c5fd 0%, #c4b5fd 50px, #ffffff 200px, #ffffff 100%);
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.necessary-expenses-content {
+  width: 100%;
+  max-width: 100%;
+  padding: 32px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.intro-section {
+  background: transparent;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: none;
+  border: none;
+}
+
+.intro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.intro-header h2 {
+  margin: 0 0 16px 0;
+  color: #1f2937;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.intro-header p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 15px;
+}
+
+.summary-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.category-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.chart-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .necessary-expenses-content {
+    padding: 32px 24px;
+  }
+
+  .intro-header h2 {
+    font-size: 22px;
+  }
+
+  .intro-header p {
+    font-size: 14px;
+  }
+}
+
+/* スマートフォン対応 */
+@media (max-width: 768px) {
+  .necessary-expenses-page {
+    padding: 12px;
+  }
+
+  .necessary-expenses-content {
+    padding: 24px 16px;
+  }
+
+  .intro-section {
+    padding: 24px 16px;
+  }
+
+  .intro-header h2 {
+    font-size: 20px;
+  }
+
+  .intro-header p {
+    font-size: 14px;
+  }
+}
+

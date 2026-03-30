@@ -1,0 +1,272 @@
+.layout-container {
+  min-height: 100vh;
+  background: #f9fafb;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.layout-main {
+  transition: margin-left 0.3s ease;
+  min-height: 100vh;
+  background: #f9fafb;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: block;
+  overflow-x: hidden;
+  z-index: 10;
+}
+
+.layout-main.sidebar-open {
+  margin-left: 280px; /* サイドバー(80px) + サブメニュー(200px) */
+  width: calc(100% - 280px);
+  max-width: calc(100% - 280px);
+  transition: margin-left 0.3s ease, width 0.3s ease, max-width 0.3s ease;
+}
+
+.layout-main.sidebar-open.submenu-closed {
+  margin-left: 80px; /* サイドバーのみ */
+  width: calc(100% - 80px);
+  max-width: calc(100% - 80px);
+}
+
+/* タブレット向けのレイアウト調整 */
+@media (max-width: 1024px) {
+  .layout-main.sidebar-open {
+    margin-left: 250px; /* サイドバー(70px) + サブメニュー(180px) */
+    width: calc(100% - 250px);
+    max-width: calc(100% - 250px);
+  }
+  
+  .layout-main.sidebar-open.submenu-closed {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+    max-width: calc(100% - 70px);
+  }
+  
+  .layout-header {
+    padding: 16px 24px;
+  }
+  
+  .page-title {
+    font-size: 20px;
+  }
+  
+  .shared-owner-info {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+  
+  .shared-badge {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+  
+  .sharing-settings-header-button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+.layout-main.sidebar-closed {
+  margin-left: 0;
+  width: 100%;
+}
+
+.layout-header {
+  background: white;
+  color: #1f2937;
+  padding: 20px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+.shared-owner-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: #f3f4f6;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-left: 16px;
+}
+
+.shared-badge {
+  background: #667eea;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.owner-name {
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.sharing-settings-header-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.sharing-settings-header-button:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  color: #1f2937;
+}
+
+.sharing-settings-header-button svg {
+  flex-shrink: 0;
+}
+
+.profile-icon-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border: 2px solid #e5e7eb;
+}
+
+.profile-icon-button:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-icon-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-icon-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.shared-page-indicator {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.logout-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.logout-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.layout-content {
+  width: 100%;
+  max-width: 100%;
+  background: #f9fafb;
+  min-height: calc(100vh);
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* スマホ向けのレイアウト調整 */
+@media (max-width: 768px) {
+  .layout-main.sidebar-open {
+    margin-left: 220px; /* サイドバー(60px) + サブメニュー(160px) */
+    width: calc(100% - 220px);
+    max-width: calc(100% - 220px);
+  }
+  
+  .layout-main.sidebar-open.submenu-closed {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+    max-width: calc(100% - 60px);
+  }
+  
+  .layout-header {
+    padding: 12px 16px;
+  }
+  
+  .page-title {
+    font-size: 18px;
+  }
+  
+  .shared-owner-info {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+  
+  .shared-badge {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+}
+

@@ -1,0 +1,230 @@
+.account-switcher-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  z-index: 2000;
+  padding: 8px;
+}
+
+.account-switcher-overlay-top-right {
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 64px;
+}
+
+.account-switcher-overlay-bottom-left {
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-bottom: 16px;
+  padding-left: 88px; /* サイドバーの幅(80px) + 余白(8px) */
+}
+
+.account-switcher-modal {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  min-width: 320px;
+  max-width: 400px;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  position: relative;
+}
+
+.account-switcher-current {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.current-account-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.current-account-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.current-account-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.current-account-avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.current-account-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.current-account-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2937;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.current-account-email {
+  font-size: 12px;
+  color: #6b7280;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.account-switcher-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.account-switcher-close:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.account-switcher-pages {
+  padding: 8px 0;
+}
+
+.account-switcher-loading {
+  padding: 24px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.account-switcher-page-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  width: 100%;
+  background: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.account-switcher-page-option:hover {
+  background: #f9fafb;
+}
+
+.account-switcher-page-option.active {
+  background: #f0f2ff;
+}
+
+.page-option-icon-small {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  border-radius: 6px;
+  color: #667eea;
+}
+
+.account-switcher-page-option.active .page-option-icon-small {
+  background: #667eea;
+  color: white;
+}
+
+.page-option-content-small {
+  flex: 1;
+  min-width: 0;
+}
+
+.page-option-title-small {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2937;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.page-option-subtitle-small {
+  font-size: 12px;
+  color: #6b7280;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.page-option-check {
+  flex-shrink: 0;
+  color: #667eea;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.account-switcher-footer {
+  padding: 12px 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.account-switcher-logout {
+  width: 100%;
+  padding: 10px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  color: #1f2937;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.account-switcher-logout:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.account-switcher-logout svg {
+  width: 16px;
+  height: 16px;
+}
+

@@ -1,0 +1,548 @@
+/* サイドバー（アイコン + ラベルの縦型） */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 80px;
+  background: #f9fafb;
+  border-right: 1px solid #e5e7eb;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* タブレット向けのサイドバーサイズ調整 */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 70px;
+  }
+}
+
+/* スマホ向けのサイドバーサイズ調整 */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+}
+
+.sidebar-closed {
+  transform: translateX(-100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.sidebar-open {
+  transform: translateX(0);
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  align-items: center;
+}
+
+/* ロゴアイコン */
+.sidebar-logo {
+  padding: 16px 0;
+  border-bottom: 1px solid #e5e7eb;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hamburger-menu-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+/* スマホ向けのハンバーガーメニューボタンサイズ調整 */
+@media (max-width: 768px) {
+  .hamburger-menu-button {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.hamburger-menu-button:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #6a3d8f 100%);
+  transform: scale(1.05);
+}
+
+.hamburger-menu-button:active {
+  transform: scale(0.95);
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  display: none;
+}
+
+/* ナビゲーション（アイコン + ラベル） */
+.sidebar-nav {
+  flex: 1;
+  padding: 12px 8px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-menu li {
+  margin-bottom: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar-menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 8px 4px;
+  color: #6b7280;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.sidebar-menu-item:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.sidebar-menu-item.active {
+  background: #f3f4f6;
+  color: #667eea;
+}
+
+.sidebar-menu-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 32px;
+  background: #667eea;
+  border-radius: 0 3px 3px 0;
+}
+
+.sidebar-menu-item.active .menu-icon {
+  color: #667eea;
+}
+
+.menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+
+.menu-label {
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.3;
+  color: inherit;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  padding: 0 2px;
+}
+
+/* タブレット向けのフォントサイズ調整 */
+@media (max-width: 1024px) {
+  .menu-label {
+    font-size: 10px;
+  }
+}
+
+/* スマホ向けのフォントサイズ調整 */
+@media (max-width: 768px) {
+  .menu-label {
+    font-size: 9px;
+  }
+  
+  .menu-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .sidebar-menu-item {
+    padding: 6px 2px;
+  }
+  
+  .sidebar-menu li {
+    margin-bottom: 8px;
+  }
+  
+  .sidebar-footer {
+    padding: 12px 0;
+    gap: 8px;
+  }
+  
+  .sidebar-sharing-button,
+  .sidebar-profile-icon-button,
+  .sidebar-guest-icon-button {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .profile-avatar-small,
+  .profile-avatar-placeholder {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+  
+  .sidebar-logo {
+    padding: 12px 0;
+  }
+}
+
+/* フッター（共有設定ボタンとプロフィールアイコン） */
+.sidebar-footer {
+  padding: 16px 0;
+  border-top: 1px solid #e5e7eb;
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar-sharing-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #6b7280;
+}
+
+.sidebar-sharing-button:hover {
+  background: #f3f4f6;
+  color: #667eea;
+  transform: scale(1.1);
+}
+
+.sidebar-sharing-button:active {
+  transform: scale(0.95);
+}
+
+.sidebar-profile-icon-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.sidebar-profile-icon-button:hover {
+  transform: scale(1.1);
+}
+
+.sidebar-profile-icon-button:active {
+  transform: scale(0.95);
+}
+
+.sidebar-profile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-avatar-small {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+.profile-avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.profile-info {
+  display: none;
+}
+
+.sidebar-guest-icon-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.sidebar-guest-icon-button:hover {
+  transform: scale(1.1);
+}
+
+.sidebar-guest-icon-button:active {
+  transform: scale(0.95);
+}
+
+.sidebar-guest-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #f3f4f6;
+  color: #9ca3af;
+  transition: all 0.2s ease;
+  border: 2px solid #e5e7eb;
+}
+
+.sidebar-guest-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.guest-modal-content {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+
+.guest-modal-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
+}
+
+.guest-modal-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.guest-modal-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.guest-modal-button:active {
+  transform: translateY(0);
+}
+
+.guest-modal-button.login-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.guest-modal-button.login-button:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+}
+
+.guest-modal-button.signup-button {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+}
+
+.guest-modal-button.signup-button:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+.guest-modal-button svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.5;
+}
+
+/* オーバーレイ（モバイル用のみ） */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  transition: opacity 0.3s ease;
+  display: none !important; /* すべてのページでオーバーレイを非表示 */
+}
+
+/* デスクトップではオーバーレイを非表示 */
+@media (min-width: 769px) {
+  .sidebar-overlay {
+    display: none !important;
+  }
+}
+
+/* モーダルスタイル（共有設定用） */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.sharing-modal-content {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+  border-radius: 16px 16px 0 0;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.modal-close-button {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.modal-close-button:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 80px;
+  }
+  
+  .menu-label {
+    font-size: 10px;
+  }
+}
+

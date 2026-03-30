@@ -1,0 +1,173 @@
+.login-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 24px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9fafb;
+  position: relative;
+}
+
+/* ログインページではモバイルでもオーバーレイを非表示 */
+.login-page-container .sidebar-overlay {
+  display: none !important;
+}
+
+.login-content-card {
+  background: linear-gradient(to bottom, #93c5fd 0%, #c4b5fd 50px, #ffffff 200px, #ffffff 100%);
+  border-radius: 20px;
+  box-shadow: none;
+  border: none;
+  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-content {
+  width: 100%;
+  max-width: 100%;
+  padding: 32px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  background: transparent;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: none;
+  border: none;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.login-card h1 {
+  color: #1f2937;
+  margin-bottom: 16px;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.login-card h2 {
+  color: #374151;
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.login-description {
+  color: #6b7280;
+  margin-bottom: 32px;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.google-sign-in-button {
+  width: 100%;
+  padding: 12px 24px;
+  background: white;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #3c4043;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 3;
+}
+
+/* タブレット向けのフォントサイズ調整 */
+@media (max-width: 1024px) {
+  .login-card h1 {
+    font-size: 28px;
+  }
+  
+  .login-card h2 {
+    font-size: 22px;
+  }
+  
+  .login-description {
+    font-size: 14px;
+  }
+  
+  .google-sign-in-button {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+}
+
+/* スマホ向けのフォントサイズ調整 */
+@media (max-width: 768px) {
+  .login-card {
+    padding: 32px 24px;
+  }
+  
+  .login-card h1 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  
+  .login-card h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .login-description {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+  
+  .google-sign-in-button {
+    font-size: 14px;
+    padding: 10px 16px;
+    gap: 10px;
+  }
+  
+  .login-content {
+    padding: 24px;
+  }
+}
+
+.google-sign-in-button:hover:not(:disabled) {
+  background: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.google-sign-in-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.error-message {
+  background: #fee;
+  color: #c33;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+

@@ -1,0 +1,92 @@
+.company-overview-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 24px;
+}
+
+.company-overview-content-card {
+  background: linear-gradient(to bottom, #93c5fd 0%, #c4b5fd 50px, #ffffff 200px, #ffffff 100%);
+  border-radius: 20px;
+  box-shadow: none;
+  border: none;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.company-overview-content {
+  width: 100%;
+  max-width: 100%;
+  padding: 32px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.company-overview-section {
+  background: transparent;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: none;
+  border: none;
+}
+
+.company-overview-section h1 {
+  margin: 0 0 16px 0;
+  color: #1f2937;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.company-overview-description {
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 15px;
+}
+
+/* タブレット向けのフォントサイズ調整 */
+@media (max-width: 1024px) {
+  .company-overview-section h1 {
+    font-size: 28px;
+  }
+  
+  .company-overview-description {
+    font-size: 14px;
+  }
+  
+  .company-overview-content {
+    padding: 24px;
+  }
+  
+  .company-overview-section {
+    padding: 24px;
+  }
+}
+
+/* スマホ向けのフォントサイズ調整 */
+@media (max-width: 768px) {
+  .company-overview-page {
+    padding: 16px;
+  }
+  
+  .company-overview-section h1 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  
+  .company-overview-description {
+    font-size: 13px;
+  }
+  
+  .company-overview-content {
+    padding: 20px;
+  }
+  
+  .company-overview-section {
+    padding: 20px;
+  }
+}
+

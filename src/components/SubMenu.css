@@ -1,0 +1,114 @@
+.submenu {
+  position: fixed;
+  top: 0;
+  left: 80px;
+  width: 200px;
+  height: 100vh;
+  background: #f9fafb;
+  overflow-y: auto;
+  z-index: 999;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* タブレット向けのサブメニューサイズ調整 */
+@media (max-width: 1024px) {
+  .submenu {
+    left: 70px;
+    width: 180px;
+  }
+}
+
+/* スマホ向けのサブメニューサイズ調整 */
+@media (max-width: 768px) {
+  .submenu {
+    left: 60px;
+    width: 160px;
+  }
+}
+
+.submenu.submenu-open {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.submenu.submenu-closed {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.submenu-content {
+  padding: 20px 12px;
+}
+
+.submenu-nav {
+  margin-top: 20px;
+}
+
+.submenu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.submenu-list li {
+  margin-bottom: 4px;
+}
+
+.submenu-item {
+  display: block;
+  padding: 10px 12px;
+  color: #6b7280;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+/* タブレット向けのサブメニューアイテム調整 */
+@media (max-width: 1024px) {
+  .submenu-item {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  
+  .submenu-content {
+    padding: 16px 10px;
+  }
+}
+
+/* スマホ向けのサブメニューアイテム調整 */
+@media (max-width: 768px) {
+  .submenu-item {
+    padding: 8px 8px;
+    font-size: 12px;
+  }
+  
+  .submenu-content {
+    padding: 12px 8px;
+  }
+  
+  .submenu-nav {
+    margin-top: 16px;
+  }
+}
+
+.submenu-item:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.submenu-item:active {
+  background: #e5e7eb;
+  color: #667eea;
+}
+
+.submenu-item.active {
+  background: #e0e7ff;
+  color: #667eea;
+  font-weight: 600;
+}
+
+/* レスポンシブ対応 - スマホ・タブレットでもサブメニューを表示 */
+

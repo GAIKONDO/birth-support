@@ -1,0 +1,625 @@
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.specification-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 24px;
+}
+
+.specification-content-card {
+  background: linear-gradient(to bottom, #93c5fd 0%, #c4b5fd 50px, #ffffff 200px, #ffffff 100%);
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.specification-content {
+  width: 100%;
+  max-width: 100%;
+  padding: 32px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.specification-header {
+  margin-bottom: 32px;
+}
+
+.specification-header h1 {
+  margin: 0 0 16px 0;
+  color: #1f2937;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.specification-description {
+  color: #6b7280;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.specification-section {
+  margin-bottom: 32px;
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.specification-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.specification-section h2 {
+  margin: 0 0 16px 0;
+  color: #1f2937;
+  font-size: 24px;
+  font-weight: 600;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 8px;
+  flex: 1;
+}
+
+.diagram-controls-top-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.specification-section h3 {
+  margin: 16px 0 12px 0;
+  color: #374151;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.specification-section p {
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0 0 16px 0;
+}
+
+.specification-section ul {
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0;
+  padding-left: 24px;
+}
+
+.specification-section li {
+  margin-bottom: 8px;
+}
+
+.mermaid-section {
+  margin-bottom: 32px;
+}
+
+.mermaid-chart-wrapper {
+  width: 100%;
+  position: relative;
+  min-height: 400px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.mermaid-chart-wrapper:fullscreen {
+  max-height: 100vh;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: auto;
+  padding: 24px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.mermaid-chart-wrapper:fullscreen .mermaid-container {
+  max-height: none;
+  overflow: visible;
+  margin: 24px 0;
+  flex: 1;
+}
+
+.diagram-controls-fullscreen {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.mermaid-chart-wrapper:fullscreen .diagram-controls-fullscreen {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #ffffff;
+  padding: 12px;
+  margin: -12px -12px 16px -12px;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.diagram-toggle {
+  display: flex;
+  gap: 4px;
+  background: #f3f4f6;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.toggle-button {
+  padding: 8px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #6b7280;
+  transition: all 0.2s;
+}
+
+.toggle-button:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: #374151;
+}
+
+.toggle-button.active {
+  background: white;
+  color: #667eea;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.mermaid-zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: transparent;
+  border-radius: 8px;
+}
+
+.zoom-button {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #374151;
+  transition: all 0.2s;
+  min-width: 36px;
+}
+
+.zoom-button:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.zoom-button.reset-button {
+  font-size: 12px;
+  padding: 6px 10px;
+}
+
+.zoom-level {
+  font-size: 14px;
+  color: #6b7280;
+  min-width: 50px;
+  text-align: center;
+}
+
+.fullscreen-button {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #374151;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-button:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.mermaid-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 24px 0;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mermaid-container svg {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+/* C4Context図のテキストを黒色にして見やすくする */
+.mermaid-container svg text {
+  fill: #000000 !important;
+  color: #000000 !important;
+}
+
+.mermaid-container svg .node text,
+.mermaid-container svg .cluster text,
+.mermaid-container svg .edgeLabel text {
+  fill: #000000 !important;
+  color: #000000 !important;
+}
+
+/* C4Context図の要素内のテキストも黒色にする */
+.mermaid-container svg foreignObject text,
+.mermaid-container svg foreignObject div,
+.mermaid-container svg foreignObject p,
+.mermaid-container svg foreignObject span {
+  color: #000000 !important;
+  fill: #000000 !important;
+}
+
+/* C4Context図の要素のサイズを調整して文字が被らないようにする */
+.mermaid-container svg .node rect,
+.mermaid-container svg .cluster rect {
+  min-width: 200px !important;
+  min-height: 100px !important;
+}
+
+/* C4Context図のforeignObjectのサイズを調整 */
+.mermaid-container svg foreignObject {
+  min-width: 200px !important;
+  min-height: 100px !important;
+}
+
+/* C4Context図の要素間のスペースを確保 */
+.mermaid-container svg {
+  padding: 40px !important;
+}
+
+/* Mermaidノードとクラスターの丸みを最初から適用 */
+.mermaid-container svg .node rect {
+  rx: 16 !important;
+  ry: 16 !important;
+}
+
+.mermaid-container svg .cluster rect {
+  rx: 20 !important;
+  ry: 20 !important;
+}
+
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .specification-page {
+    padding: 16px;
+  }
+  
+  .specification-content {
+    padding: 20px;
+  }
+  
+  .specification-header h1 {
+    font-size: 24px;
+  }
+  
+  .specification-description {
+    font-size: 14px;
+  }
+  
+  .specification-section {
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+  
+  .specification-section h2 {
+    font-size: 20px;
+  }
+  
+  .specification-section h3 {
+    font-size: 18px;
+  }
+  
+  .specification-section p,
+  .specification-section ul {
+    font-size: 14px;
+  }
+}
+
+/* 財務表のスタイル */
+.financial-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+.financial-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.financial-table th {
+  padding: 12px 8px;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid #e5e7eb;
+  white-space: nowrap;
+  width: 120px;
+}
+
+.financial-table th.sticky-column {
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-width: 300px;
+  width: 300px;
+}
+
+.financial-table th.quarter-header {
+  font-size: 12px;
+  padding: 8px 4px;
+}
+
+.financial-table th.total-column {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  font-weight: 700;
+  width: 140px;
+}
+
+.financial-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.financial-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.financial-table td {
+  padding: 10px 8px;
+  text-align: right;
+  border: 1px solid #e5e7eb;
+  white-space: nowrap;
+  width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.financial-table td:first-child {
+  text-align: left;
+  font-weight: 500;
+  position: sticky;
+  left: 0;
+  background: white;
+  z-index: 5;
+  min-width: 200px;
+}
+
+.financial-table td:nth-child(2) {
+  text-align: left;
+  font-weight: 500;
+  position: sticky;
+  left: 40px;
+  background: white;
+  z-index: 4;
+  min-width: 300px;
+  width: 300px;
+}
+
+.financial-table tbody tr:hover td:first-child {
+  background: #f9fafb;
+}
+
+.financial-table tbody tr:hover td:nth-child(2) {
+  background: #f9fafb;
+}
+
+.financial-table td.indent {
+  padding-left: 24px;
+  color: #4b5563;
+}
+
+.financial-table td.number-cell {
+  font-family: 'Courier New', monospace;
+  color: #1f2937;
+  text-align: right !important;
+}
+
+.financial-table td.total-cell {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+
+.financial-table tr.section-header td {
+  background: #e0e7ff;
+  color: #1f2937;
+  font-weight: 700;
+  padding: 12px;
+  text-align: left;
+}
+
+.financial-table td.section-label-vertical {
+  writing-mode: vertical-rl !important;
+  text-orientation: upright !important;
+  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
+  padding: 12px 8px;
+  text-align: center;
+  vertical-align: middle;
+  background: #f3f4f6;
+  color: #1f2937 !important;
+  border-right: 2px solid #e5e7eb;
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  font-weight: 700;
+}
+
+.financial-table th.section-column {
+  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
+  background: #f3f4f6;
+  border-right: 2px solid #e5e7eb;
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  color: #1f2937;
+}
+
+.financial-table tr.section-header td:not(.section-label-vertical) {
+  background: #e0e7ff;
+  border: none;
+}
+
+.financial-table tr.subtotal-row td {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+
+.financial-table tr.subtotal-row td:first-child {
+  background: #f3f4f6;
+}
+
+.financial-table tr.profit-row td {
+  background: #d1fae5;
+  font-weight: 700;
+  color: #065f46;
+}
+
+.financial-table tr.profit-row td:first-child {
+  background: #d1fae5;
+}
+
+.financial-table tr.net-profit-row td {
+  background: #a7f3d0;
+  font-weight: 700;
+  color: #064e3b;
+  font-size: 15px;
+}
+
+.financial-table tr.net-profit-row td:first-child {
+  background: #a7f3d0;
+}
+
+.financial-table td.highlight {
+  background: #fef3c7;
+  font-weight: 600;
+}
+
+.financial-table td.highlight.total-cell {
+  background: #fde68a;
+}
+
+/* マイナス値（赤字）のスタイル */
+.financial-table td.negative-value {
+  color: #dc2626 !important;
+  font-weight: 600;
+}
+
+.financial-table td.negative-value strong {
+  color: #dc2626 !important;
+}
+
+/* スマホ対応 */
+.case-study-flow-comparison {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .case-study-flow-comparison {
+    grid-template-columns: 1fr;
+  }
+  .specification-page {
+    padding: 12px;
+  }
+  
+  .specification-content {
+    padding: 16px;
+  }
+  
+  .specification-header h1 {
+    font-size: 20px;
+  }
+  
+  .specification-description {
+    font-size: 13px;
+  }
+  
+  .specification-section {
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .specification-section h2 {
+    font-size: 18px;
+  }
+  
+  .specification-section h3 {
+    font-size: 16px;
+  }
+  
+  .specification-section p,
+  .specification-section ul {
+    font-size: 13px;
+  }
+
+  .financial-table {
+    font-size: 11px;
+  }
+
+  .financial-table th {
+    padding: 8px 4px;
+    font-size: 10px;
+    min-width: 80px;
+  }
+
+  .financial-table td {
+    padding: 6px 4px;
+    font-size: 10px;
+  }
+
+  .financial-table th.sticky-column,
+  .financial-table td:first-child {
+    min-width: 150px;
+  }
+}
+

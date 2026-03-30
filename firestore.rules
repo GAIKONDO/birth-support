@@ -1,0 +1,91 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ユーザーのデータへのアクセス（オーナーまたは共有メンバー）
+    match /users/{userId}/data/{document=**} {
+      allow read: if request.auth != null && (
+        request.auth.uid == userId ||
+        exists(/databases/$(database)/documents/users/$(userId)/sharedMembers/$(request.auth.uid))
+      );
+      allow write: if request.auth != null && (
+        request.auth.uid == userId ||
+        (exists(/databases/$(database)/documents/users/$(userId)/sharedMembers/$(request.auth.uid)) &&
+         get(/databases/$(database)/documents/users/$(userId)/sharedMembers/$(request.auth.uid)).data.permission == 'editor' &&
+         get(/databases/$(database)/documents/users/$(userId)/sharedMembers/$(request.auth.uid)).data.status == 'accepted')
+      );
+    }
+    
+    // 共有メンバー管理（オーナーまたは自分自身のメンバー情報）
+    match /users/{userId}/sharedMembers/{memberId} {
+      // オーナーは全メンバーを読み取り可能
+      // 招待されたユーザーは自分自身のメンバー情報（メールアドレス一致）を読み取り可能
+      allow read: if request.auth != null && (
+        request.auth.uid == userId ||
+        (resource != null && resource.data.email == request.auth.token.email)
+      );
+      // オーナーは書き込み可能
+      // 招待されたユーザーは自分自身のメンバー情報（memberId == request.auth.uid）を書き込み可能（承認時）
+      allow write: if request.auth != null && (
+        request.auth.uid == userId ||
+        (memberId == request.auth.uid && request.resource.data.status == 'accepted')
+      );
+    }
+    
+    // 招待管理
+    match /invitations/{invitationId} {
+      allow read: if request.auth != null && (
+        resource.data.email == request.auth.token.email ||
+        resource.data.ownerId == request.auth.uid
+      );
+      allow create: if request.auth != null;
+      allow delete: if request.auth != null && (
+        resource.data.email == request.auth.token.email ||
+        resource.data.ownerId == request.auth.uid
+      );
+      allow update: if request.auth != null && (
+        resource.data.email == request.auth.token.email ||
+        resource.data.ownerId == request.auth.uid
+      );
+    }
+    
+    // 招待トークン管理（トークンで検索できるように）
+    match /inviteTokens/{tokenId} {
+      allow read: if true; // トークン検証のため、誰でも読み取り可能
+      allow create: if request.auth != null;
+      // オーナーまたは招待されたユーザー（メールアドレス一致）が削除可能
+      allow delete: if request.auth != null && (
+        resource.data.ownerId == request.auth.uid ||
+        resource.data.email == request.auth.token.email
+      );
+      // 更新は不要（削除のみ）
+      allow update: if false;
+    }
+    
+    // 共有アクセス情報（オーナーIDを簡単に取得できるように）
+    match /sharedAccess/{accessId} {
+      allow read: if request.auth != null && (
+        resource.data.memberId == request.auth.uid ||
+        resource.data.ownerId == request.auth.uid
+      );
+      allow create: if request.auth != null;
+      allow update: if request.auth != null && (
+        resource.data.memberId == request.auth.uid ||
+        resource.data.ownerId == request.auth.uid
+      );
+      allow delete: if request.auth != null && (
+        resource.data.memberId == request.auth.uid ||
+        resource.data.ownerId == request.auth.uid
+      );
+    }
+    
+    // 出産支援制度マスターデータ（全ユーザーが読み取り可能、管理者のみ書き込み可能）
+    match /supportSystems/{systemId} {
+      // 誰でも読み取り可能（ログイン前でも閲覧可能）
+      allow read: if true;
+      // 書き込みは管理者のみ（将来的に管理者フラグを追加する場合はここを更新）
+      // 現時点では、認証済みユーザーが書き込み可能（開発用）
+      // 本番環境では、管理者チェックを追加することを推奨
+      allow write: if request.auth != null;
+    }
+  }
+}

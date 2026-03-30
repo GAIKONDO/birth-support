@@ -1,0 +1,528 @@
+.statistics-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 24px;
+}
+
+.statistics-content-card {
+  background: linear-gradient(to bottom, #93c5fd 0%, #c4b5fd 50px, #ffffff 200px, #ffffff 100%);
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.statistics-content {
+  width: 100%;
+  max-width: 100%;
+  padding: 32px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.intro-section {
+  background: transparent;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: none;
+  border: none;
+}
+
+.intro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.intro-header h2 {
+  margin: 0 0 16px 0;
+  color: #1f2937;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.statistics-section {
+  margin-bottom: 48px;
+}
+
+.statistics-section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 16px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.statistics-info-message {
+  padding: 16px;
+  background-color: #fef3c7;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  color: #92400e;
+}
+
+.statistics-info-message strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.intro-header p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 15px;
+}
+
+.statistics-table-container {
+  margin-top: 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.statistics-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.statistics-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.statistics-table th {
+  padding: 20px 16px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.statistics-table th.category-column {
+  width: 25%;
+}
+
+.statistics-table th.count-column {
+  width: 20%;
+}
+
+.statistics-table th.amount-column {
+  width: 25%;
+}
+
+.statistics-table th.leave-benefit-column {
+  width: 30%;
+}
+
+.statistics-table-row {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease;
+}
+
+.statistics-table-row:hover {
+  background-color: #f9fafb;
+}
+
+.statistics-table-row:last-child {
+  border-bottom: none;
+}
+
+.statistics-table td {
+  padding: 20px 16px;
+  vertical-align: middle;
+}
+
+.category-cell {
+  font-weight: 600;
+}
+
+.category-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.category-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.category-label {
+  font-size: 16px;
+  color: #1f2937;
+  flex: 1;
+}
+
+.expand-icon {
+  font-size: 12px;
+  color: #9ca3af;
+  transition: transform 0.3s ease;
+  margin-left: auto;
+}
+
+.expand-icon.expanded {
+  transform: rotate(180deg);
+}
+
+.statistics-table-row.expanded {
+  background-color: #f9fafb;
+}
+
+.systems-detail-row {
+  background-color: #fafafa;
+}
+
+.systems-detail-cell {
+  padding: 0 !important;
+  border-top: none;
+}
+
+.systems-table-wrapper {
+  padding: 20px 24px;
+  overflow-x: auto;
+}
+
+.systems-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.systems-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.systems-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: white;
+}
+
+.systems-table th.system-title-header {
+  min-width: 200px;
+  text-align: left;
+}
+
+.systems-table th.system-amount-header {
+  min-width: 120px;
+  text-align: left;
+}
+
+.systems-table th.system-target-header {
+  min-width: 60px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.systems-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease;
+}
+
+.systems-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.systems-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.systems-table td {
+  padding: 12px 16px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.system-title-cell {
+  font-weight: 600;
+  color: #1f2937;
+  min-width: 200px;
+}
+
+.system-row.grayed-out {
+  opacity: 0.5;
+  background-color: #f9fafb;
+}
+
+.system-row.grayed-out .system-title-cell,
+.system-row.grayed-out .system-amount-cell,
+.system-row.grayed-out .system-target-cell {
+  color: #9ca3af;
+}
+
+.system-amount-cell {
+  color: #6b7280;
+  font-weight: 500;
+  min-width: 120px;
+}
+
+.system-target-cell {
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  min-width: 60px;
+}
+
+.count-cell {
+  text-align: left;
+  padding-left: 16px !important;
+}
+
+.count-value {
+  font-size: 28px;
+  font-weight: 800;
+  margin-right: 6px;
+}
+
+.count-unit {
+  font-size: 16px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.amount-cell {
+  text-align: left;
+  padding-left: 16px !important;
+}
+
+.amount-value {
+  font-size: 28px;
+  font-weight: 800;
+  color: #10b981;
+  margin-right: 6px;
+}
+
+.amount-unit {
+  font-size: 16px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.amount-unavailable {
+  font-size: 16px;
+  font-weight: 600;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.leave-benefit-cell {
+  text-align: left;
+  padding-left: 16px !important;
+}
+
+.leave-benefit-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.leave-benefit-amount-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.leave-benefit-amount {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.leave-benefit-note {
+  font-size: 10px;
+  color: #9ca3af;
+  font-weight: 400;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .statistics-content {
+    padding: 32px 24px;
+  }
+
+  .intro-header h2 {
+    font-size: 22px;
+  }
+
+  .intro-header p {
+    font-size: 14px;
+  }
+
+  .statistics-table-container {
+    margin-top: 32px;
+  }
+
+  .statistics-table th {
+    padding: 16px 20px;
+    font-size: 15px;
+  }
+
+  .statistics-table td {
+    padding: 20px;
+  }
+
+  .category-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .category-label {
+    font-size: 15px;
+  }
+
+  .count-value,
+  .amount-value {
+    font-size: 24px;
+  }
+
+  .count-unit,
+  .amount-unit {
+    font-size: 14px;
+  }
+}
+
+/* スマートフォン対応 */
+@media (max-width: 768px) {
+  .statistics-page {
+    padding: 12px;
+  }
+
+  .statistics-content {
+    padding: 24px 16px;
+  }
+
+  .intro-section {
+    padding: 24px 16px;
+  }
+
+  .intro-header h2 {
+    font-size: 20px;
+  }
+
+  .intro-header p {
+    font-size: 14px;
+  }
+
+  .statistics-table-container {
+    margin-top: 24px;
+    border-radius: 12px;
+  }
+
+  .statistics-table {
+    font-size: 14px;
+  }
+
+  .statistics-table th {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .statistics-table th.category-column,
+  .statistics-table th.count-column,
+  .statistics-table th.amount-column {
+    width: auto;
+  }
+
+  .statistics-table td {
+    padding: 16px;
+  }
+
+  .category-info {
+    gap: 10px;
+    position: relative;
+  }
+
+  .expand-icon {
+    position: absolute;
+    right: 0;
+  }
+
+  .systems-table-wrapper {
+    padding: 16px;
+  }
+
+  .systems-table th {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .systems-table th.system-title-header {
+    min-width: 150px;
+  }
+
+  .systems-table th.system-amount-header {
+    min-width: 100px;
+  }
+
+  .systems-table th.system-target-header {
+    min-width: 50px;
+    font-size: 11px;
+  }
+
+  .systems-table td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .system-title-cell {
+    min-width: 150px;
+  }
+
+  .system-amount-cell {
+    min-width: 100px;
+  }
+
+  .system-target-cell {
+    min-width: 50px;
+    font-size: 14px;
+  }
+
+  .category-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .category-label {
+    font-size: 14px;
+  }
+
+  .count-value,
+  .amount-value {
+    font-size: 20px;
+  }
+
+  .count-unit,
+  .amount-unit {
+    font-size: 13px;
+  }
+
+  .amount-unavailable {
+    font-size: 14px;
+  }
+}
+

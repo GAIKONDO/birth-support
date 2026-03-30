@@ -1,0 +1,152 @@
+.invite-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 24px;
+}
+
+.invite-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.invite-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.invite-card h2 {
+  margin: 0 0 24px 0;
+  color: #1f2937;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.invite-info {
+  margin-bottom: 24px;
+}
+
+.invite-info p {
+  margin: 0 0 16px 0;
+  color: #374151;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.invite-details {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.detail-value {
+  color: #1f2937;
+  font-size: 14px;
+}
+
+.invite-actions {
+  margin-top: 24px;
+}
+
+.invite-instruction {
+  margin: 0 0 20px 0;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px 24px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.login-button:hover:not(:disabled) {
+  background: #5568d3;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.login-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.back-button {
+  width: 100%;
+  padding: 12px 24px;
+  background: #f3f4f6;
+  color: #374151;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 16px;
+}
+
+.back-button:hover {
+  background: #e5e7eb;
+}
+
+.invite-card.error {
+  border: 2px solid #ef4444;
+}
+
+.invite-card.error h2 {
+  color: #dc2626;
+}
+
+.invite-card.error p {
+  color: #991b1b;
+}
+
+@media (max-width: 768px) {
+  .invite-page {
+    padding: 16px;
+  }
+
+  .invite-card {
+    padding: 24px;
+  }
+
+  .invite-card h2 {
+    font-size: 20px;
+  }
+}
+
